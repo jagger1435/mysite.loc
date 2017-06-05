@@ -8,6 +8,22 @@
  * Файл настроек
  */
 
-//константы для обращения к контроллерам
+//>константы для обращения к контроллерам
 define('PathPrefix', '../controllers/');
 define('PathPostfix', 'Controller.php');
+//<
+
+//>используемый шаблон
+$template = 'default';
+
+//пути к файлам шаблонов (*.tpl)
+define('PrefixTemplate', "../views/{$template}/");
+define('PostfixTemplate', '.tpl');
+
+//пути к файлам шаблонов в веб-пространстве
+define('TemplateWebPath', "/templates/{$template}/");
+//<
+
+//>Инициализация шаблонизатора Smarty
+require('../library/Smarty/libs/Smarty.class.php');
+//<
