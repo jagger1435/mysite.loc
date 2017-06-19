@@ -5,6 +5,13 @@
  * Date: 05.06.2017
  * Time: 10:22
  */
-function testAction(){
-    echo 'IndexController.php > testAction';
+/**
+ * Формирование главной страницы сайта
+ * 
+ * @param $smarty
+ */
+function indexAction($smarty){
+    $smarty -> assign('pageTitle', 'Главная страница сайта');
+
+    loadTemplate($smarty, 'index');
 }

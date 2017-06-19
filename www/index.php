@@ -12,8 +12,7 @@ include_once '../library/main_function.php';// Основные функции
 
 //опредляем с каким контроллером будем работать
  $controllerName = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'Index';
-
  //определяем с какой функцией будем работать
 $actionName = isset($_GET['action']) ? $_GET['action'] : 'index';
 
-loadPage($controllerName, $actionName);
+loadPage($smarty, $controllerName, $actionName);

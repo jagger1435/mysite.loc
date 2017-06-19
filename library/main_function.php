@@ -11,12 +11,38 @@
 /**
  * @param $controllerName -  название контроллера
  * @param string $actionName - название функции обработки страницы
+ * @param object $smarty - обьект smarty
  */
-function loadPage($controllerName, $actionName = 'index'){
+function loadPage($smarty, $controllerName, $actionName = 'index'){
     //подключаем контроллер
     include_once PathPrefix . $controllerName . PathPostfix;
 
     //формируем название функциии
     $function = $actionName . 'Action';
-    $function();
+    $function($smarty);
+}
+
+/**
+ * Загрузка шаблона
+ *
+ * @param $smarty - объект шаблона
+ * @param $templateName - название файла шаблона
+ */
+function loadTemplate($smarty, $templateName)
+{
+    $smarty->display($templateName . PostfixTemplate);
+}
+
+/**
+ * Функция дебага
+ *
+ * @param null $value - проверяемое значение
+ * @param int $die - если 0 продолжить выполнение
+ */
+function d($value =null, $die = 1)
+{
+    echo 'Debug: <br /><pre>';
+    print_r($value);
+    echo '</pre>';
+    if($die) die;
 }

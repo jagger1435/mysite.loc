@@ -28,7 +28,8 @@ define('TemplateWebPath', "/templates/{$template}/");
 require('../library/Smarty/libs/Smarty.class.php');
 $smarty = new Smarty();
 $smarty -> setTemplateDir(PrefixTemplate);
-$smarty -> setCacheDir('../tmp/smarty/templates_c');
+$smarty -> setCompileDir('../tmp/smarty/templates_c');
+$smarty -> setCacheDir('../tmp/smarty/cache');
 $smarty -> setConfigDir('../library/Smarty/configs');
 
 $smarty -> assign('TemplateWebPath', TemplateWebPath);
