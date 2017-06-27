@@ -46,3 +46,17 @@ function d($value =null, $die = 1)
     echo '</pre>';
     if($die) die;
 }
+
+/**
+ * Преобразователь данных в массив
+ * @param $rs - объект
+ * @return array|bool - массив или false
+ */
+function createSmartyRsArray($rs){
+    if(! $rs) return false;
+    $smartyRs =array();
+    while ($row = $rs->fetch_assoc()){
+        $smartyRs[] = $row;
+    }
+    return $smartyRs;
+}
