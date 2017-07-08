@@ -21,19 +21,21 @@ function indexAction($smarty){
     $rsChildCats = null;
     $rsCategory = getCatById($catId);
 
-    // усли главная категория, то показываем дочерние, если нет, то паказываем товары
 
-    if($rsCategory == 0){
+    // если главная категория, то показываем дочерние, если нет, то паказываем товары
+
+    if($rsCategory['parent_id'] == 0){
         $rsChildCats = getChildrenForCat($catId);
     } else {
         $rsProducts = getProductsByCat($catId);
+        
     }
 
     $rsCategories = getAllMainCatsWithChildren();
 
     $smarty->assign('pageTitle', 'Товары категории ' .$rsCategory['name']);
 
-    $smarty->assign('rsChildCat', $rsChildCats);
+    $smarty->assign('rsChildCats', $rsChildCats);
     $smarty->assign('rsProducts', $rsProducts);
     $smarty->assign('rsCategory', $rsCategory);
 

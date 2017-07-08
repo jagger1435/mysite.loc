@@ -44,5 +44,5 @@ function getCatById($catId){
     $catId = intval($catId);
     global $mysqli;
     $rs = $mysqli->query("SELECT * FROM categories WHERE id ='{$catId}'");
-
+    return createSmartyRsArray($rs);
 }
