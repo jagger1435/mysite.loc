@@ -35,6 +35,7 @@ function indexAction($smarty){
     $rsCategories = getAllMainCatsWithChildren();
 
     $smarty->assign('pageTitle', 'Товары категории ' .$rsCategory['name']);
+    $smarty->assign('notProduct', 'В данной категории нет товара');
 
     $smarty->assign('rsChildCats', $rsChildCats);
     $smarty->assign('rsProducts', $rsProducts);
