@@ -26,6 +26,7 @@ function indexAction($smarty){
 
     if($rsCategory['parent_id'] == 0){
         $rsChildCats = getChildrenForCat($catId);
+
     } else {
         $rsProducts = getProductsByCat($catId);
         

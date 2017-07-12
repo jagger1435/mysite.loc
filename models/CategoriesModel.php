@@ -9,7 +9,7 @@
 
 /**
  * Дополнение для получения дочерних категорий
- * @param $catId - id родительской категории
+ * @param integer $catId - id родительской категории
  * @return array|bool - массив с дочерними категориями или false
  */
 function getChildrenForCat($catId){
@@ -44,5 +44,5 @@ function getCatById($catId){
     $catId = intval($catId);
     global $mysqli;
     $rs = $mysqli->query("SELECT * FROM categories WHERE id ='{$catId}'");
-    return createSmartyRsArray($rs);
+    return $rs->fetch_assoc();
 }
