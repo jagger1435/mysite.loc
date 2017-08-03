@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>{$pageTitle}</title>
-        <link rel="stylesheet" href="www{$TemplateWebPath}css/main.css" type="text/css"/>
+        <link rel="stylesheet" href="../../www{$TemplateWebPath}css/main.css" type="text/css"/>
     </head>
     <body>
         <div id="header">

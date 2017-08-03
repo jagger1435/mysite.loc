@@ -17,3 +17,4 @@ include_once '../library/main_function.php';// Основные функции
 $actionName = isset($_GET['action']) ? $_GET['action'] : 'index';
 
 loadPage($smarty, $controllerName, $actionName);
+
